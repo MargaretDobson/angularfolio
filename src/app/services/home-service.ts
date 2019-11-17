@@ -14,8 +14,7 @@ export class HomeService{
         return {
             'toolbarTitle': 'Welcome to my Angular portfolio',
             'title': 'Hello and welcome',
-            'subtitle': 'So you are thinking about hiring me?',
-            'subtitle2': 'Please find code examples in this portfolio, thankyou for your time',
+            'subtitle': 'So you are thinking about hiring me? Please find some code examples here',
             'link': '',
             'description': '',
             'background': 'assets/imgs/background/39.jpg'
