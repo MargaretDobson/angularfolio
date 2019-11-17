@@ -1,0 +1,32 @@
+/*  Theme Action Sheet - News
+===========================================*/
+
+ion-content {
+  --offset-top: -56px !important;
+
+  [top-stories] {
+    [background-size] {
+      height: 200px;
+      position: relative;
+    }
+  }
+
+  [slider] {
+    overflow-x: scroll;
+    display: -webkit-inline-box;
+    display: flex;
+    flex-direction: row;
+
+    ion-card {
+      margin: 4px 4px 10px 4px;
+      position: relative;
+      width: 150px;
+      flex: none;
+
+      [background-size] {
+        height: 100px;
+        position: relative;
+      }
+    }
+  }
+}

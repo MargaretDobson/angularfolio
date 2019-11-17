@@ -1,0 +1,30 @@
+<!-- SWIPE TO DISMISS --COMPONENT 3 -->
+<ion-content>
+  <ion-grid no-padding *ngIf="data != null">
+    <ion-row>
+      <ion-col size="12" no-padding>
+        <ion-list no-margin #dynamicList>
+          <ion-item-sliding *ngFor="let item of data.items" #slidingItem>
+            <ion-item transparent border-radius lines="none" background-size (click)="onItemClickFunc(item.title, $event)" [ngStyle]="{'background-image': 'url(' + item.image + ')'}">
+              <ion-label no-margin padding>
+                <h1 text-size-xl text-color-light font-bold>{{item.title}}</h1>
+                <h2 text-size-md text-color-light font-regular>{{item.subtitle}}</h2>
+              </ion-label>
+            </ion-item>
+            <ion-item-options transparent side="start">
+              <ion-item-option transparent (click)="onDeleteFunc(item, $event)">
+                <!-- Button Delate -->
+                <ion-button button-top-icon fill="clear" text-capitalize (click)="delete(item)">
+                  <ion-label>
+                    <ion-icon icon-font-lg icon-color-secondary [name]="item.iconDelete"></ion-icon>
+                    <h2 text-size-md text-color-primary font-regular>{{item.delate}}</h2>
+                  </ion-label>
+                </ion-button>
+              </ion-item-option>
+            </ion-item-options>
+          </ion-item-sliding>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

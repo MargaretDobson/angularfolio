@@ -1,0 +1,45 @@
+<!-- SWIPE TO DISMISS --COMPONENT 2 -->
+<ion-grid no-padding *ngIf="data != null">
+  <ion-row>
+    <ion-col size="12" no-padding>
+      <ion-list no-margin #dynamicList>
+        <!--Header-->
+        <ion-list-header>
+          <ion-label padding-top padding-bottom>
+            <h1 text-size-md font-regular text-color-accent no-margin>{{data.header}}</h1>
+          </ion-label>
+        </ion-list-header>
+        <ion-item-sliding border-radius *ngFor="let item of data.items" #slidingItem>
+          <ion-item no-margin no-padding lines="none" (click)="onItemClickFunc(item, $event)">
+            <ion-label no-margin>
+              <ion-item-divider>
+                <!--Content Avatar-->
+                <ion-avatar slot="start">
+                  <img [src]="item.image">
+                </ion-avatar>
+                <!-- Ttile and Subtitle -->
+                <h2 text-size-md font-bold text-color-primary text-wrap padding-start>{{item.title}}</h2>
+                <ion-button default-button box-shadow text-capitalize slot="end" margin-half>
+                  {{item.ionButton}}</ion-button>
+              </ion-item-divider>
+              <ion-item-divider>
+                <h3 text-size-sm text-color-secondary font-regular text-wrap padding-bottom>{{item.subtitle}}</h3>
+              </ion-item-divider>
+            </ion-label>
+          </ion-item>
+          <ion-item-options side="end" slot="end">
+            <ion-item-option border-radius-right (click)="onDeleteFunc(item, $event)">
+              <!-- Button Delate -->
+              <ion-button button-top-icon fill="clear" text-capitalize (click)="delete(item)">
+                <ion-label>
+                  <ion-icon icon-font-lg icon-color-primary [name]="item.iconDelete"></ion-icon>
+                  <h2 text-size-md text-color-light font-regular>{{item.delate}}</h2>
+                </ion-label>
+              </ion-button>
+            </ion-item-option>
+          </ion-item-options>
+        </ion-item-sliding>
+      </ion-list>
+    </ion-col>
+  </ion-row>
+</ion-grid>

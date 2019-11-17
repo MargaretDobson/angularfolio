@@ -1,0 +1,9 @@
+<ion-grid *ngIf="data != null">
+  <ion-row>
+    <ion-col no-margin size="6" size-md="4" *ngFor="let item of data.items;let i = index">
+      <ion-card no-padding no-margin no-border-radius (click)="onItemClickFunc(item, i, $event)">
+        <img [src]="item.image" />
+      </ion-card>
+    </ion-col>
+  </ion-row>
+</ion-grid>

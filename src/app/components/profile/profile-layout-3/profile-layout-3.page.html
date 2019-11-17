@@ -1,0 +1,77 @@
+<!--Profile- Profile 1-->
+<ion-content>
+  <ion-grid no-padding *ngIf="data != null">
+    <ion-row no-padding>
+      <ion-col no-padding size="12">
+        <ion-card text-center no-margin box-shadow no-border-radius>
+          <ion-item transparent lines="none">
+            <ion-avatar slot="start">
+              <img [src]="data.image" alt="">
+            </ion-avatar>
+            <ion-label padding-start>
+              <h1 text-size-md text-color-primary font-bold text-wrap>{{data.title}}</h1>
+              <p text-size-sm text-color-secondary font-regular text-wrap>{{data.subtitle}}</p>
+            </ion-label>
+          </ion-item>
+          <div social-share>
+            <!-- Followers-->
+            <ion-item transparent lines="none">
+              <ion-label text-center>
+                <span text-size-sm text-color-accent font-medium>{{data.valueFollowers}}</span>
+                <div clearfix></div>
+                <h2 text-size-sm text-color-accent font-medium>{{data.followers}}</h2>
+              </ion-label>
+            </ion-item>
+            <!-- Following -->
+            <ion-item transparent lines="none">
+              <ion-label text-center>
+                <span text-size-sm text-color-accent font-medium>{{data.valueFollowing}}</span>
+                <div clearfix></div>
+                <h2 text-size-sm text-color-accent font-medium>{{data.following}}</h2>
+              </ion-label>
+            </ion-item>
+            <!-- Post -->
+            <ion-item transparent lines="none">
+              <ion-label text-center>
+                <span text-size-sm text-color-accent font-medium>{{data.valuePosts}}</span>
+                <div clearfix></div>
+                <h2 text-size-sm text-color-accent font-medium>{{data.posts}}</h2>
+              </ion-label>
+            </ion-item>
+          </div>
+          <ion-row padding-bottom>
+            <ion-col size="6" padding-start>
+              <ion-button box-shadow default-button text-capitalize expand="block">
+                {{data.follow}}</ion-button>
+            </ion-col>
+            <ion-col size="6" padding-end>
+              <ion-button box-shadow default-button text-capitalize expand="block">
+                {{data.message}}</ion-button>
+            </ion-col>
+          </ion-row>
+        </ion-card>
+      </ion-col>
+      <ion-col size="12">
+        <!-- Name Category -->
+        <h1 text-uppercase text-size-sm text-color-accent font-bold text-center>{{data.category}}</h1>
+      </ion-col>
+      <ion-col size="12" size-md="4" text-center *ngFor="let item of data.items;let i = index" (click)="onItemClickFunc(item, $event)">
+        <ion-card no-padding text-center box-shadow border-radius no-margin>
+          <img [src]="item.backgroundCard" alt="">
+          <ion-card-content>
+            <span text-size-xs text-color-secondary font-bold text-capitalize>{{item.category}}</span>
+            <h1 text-size-md text-wrap text-color-primary font-medium padding-top>{{item.title}}</h1>
+          </ion-card-content>
+          <ion-button button-icon text-capitalize fill="clear" (click)="onLikeFunc(item, $event)">
+            <ion-icon icon-font-sm icon-color-secondary slot="start" [ngClass]="{'active' : item.like.isActive}" [name]="item.like.icon"></ion-icon>
+            {{item.like.number}} {{item.like.text}}
+          </ion-button>
+          <ion-button button-icon text-capitalize fill="clear" (click)="onCommentFunc(item, $event)">
+            <ion-icon icon-font-sm icon-color-secondary slot="start" [name]="item.comment.icon"></ion-icon>
+            {{item.comment.number}} {{item.comment.text}}
+          </ion-button>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

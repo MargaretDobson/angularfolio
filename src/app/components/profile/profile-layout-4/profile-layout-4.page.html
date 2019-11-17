@@ -1,0 +1,70 @@
+<!--Theme Profile- Profile With Slider-->
+<ion-content>
+  <ion-grid *ngIf="data != null">
+    <ion-row>
+      <ion-col size="12" margin-top>
+        <ion-card padding text-center box-shadow border-radius>
+          <ion-avatar>
+            <img [src]="data.image" alt="">
+          </ion-avatar>
+          <ion-card-content text-cente>
+            <h1 text-size-md text-color-primary font-bold text-wrap>{{data.title}}</h1>
+            <p ext-size-sm text-color-secondary font-light text-wrap>{{data.subtitle}}</p>
+          </ion-card-content>
+          <div social-share>
+            <!-- Followers-->
+            <ion-item transparent lines="none">
+              <ion-label text-center>
+                <span text-size-sm text-color-secondary font-regular>{{data.valueFollowers}}</span>
+                <div clearfix></div>
+                <h2 text-size-sm text-color-secondary font-regular>{{data.followers}}</h2>
+              </ion-label>
+            </ion-item>
+            <!-- Following -->
+            <ion-item transparent lines="none">
+              <ion-label text-center>
+                <span text-size-sm text-color-secondary font-regular>{{data.valueFollowing}}</span>
+                <div clearfix></div>
+                <h2 text-size-sm text-color-secondary font-regular>{{data.following}}</h2>
+              </ion-label>
+            </ion-item>
+            <!-- Post -->
+            <ion-item transparent lines="none">
+              <ion-label text-center>
+                <span text-size-sm text-color-secondary font-regular>{{data.valuePosts}}</span>
+                <div clearfix></div>
+                <h2 text-size-sm text-color-secondary font-regular>{{data.posts}}</h2>
+              </ion-label>
+            </ion-item>
+          </div>
+        </ion-card>
+      </ion-col>
+      <!-- Slider -->
+      <ion-col size="12">
+        <h2 text-uppercase text-size-sm text-color-accent no-margin font-bold text-center>{{data.category}}</h2>
+        <ion-slides pager="true">
+          <ion-slide *ngFor="let item of data.items" (click)="onItemClickFunc(item, $event)">
+            <ion-col size="12" text-center>
+              <ion-card padding box-shadow border-radius>
+                <img [src]="item.backgroundCard">
+                <ion-card-content text-center>
+                  <span text-size-xs text-color-secondary font-bold text-capitalize>{{item.category}}</span>
+                  <h1 text-size-md text-wrap text-color-primary font-regular padding-top>{{item.title}}</h1>
+                </ion-card-content>
+                <ion-button button-icon fill="clear" text-capitalize (click)="onLikeFunc(item, $event)">
+                  <ion-icon icon-font-sm icon-color-secondary slot="start" [ngClass]="{'active' : item.like.isActive}" [name]="item.like.icon"></ion-icon>
+                  {{item.like.number}} {{item.like.text}}
+                </ion-button>
+                <ion-button button-icon fill="clear" text-capitalize (click)="onCommentFunc(item, $event)">
+                  <ion-icon icon-font-sm icon-color-secondary slot="start" [name]="item.comment.icon"></ion-icon>
+                  {{item.comment.number}} {{item.comment.text}}
+                </ion-button>
+              </ion-card>
+            </ion-col>
+          </ion-slide>
+        </ion-slides>
+      </ion-col>
+      <ion-col size="12" margin-top padding-top></ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

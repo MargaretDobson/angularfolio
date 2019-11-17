@@ -1,0 +1,58 @@
+<!-- EXPANDABLE --COMPONENT 2 -->
+<ion-app>
+  <!-- Header -->
+  <ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-back-button defaultHref="/"></ion-back-button>
+      </ion-buttons>
+      <ion-title text-capitalize>{{data.toolbarTitle}}</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content *ngIf="data != null">
+    <ion-grid no-padding>
+      <ion-row *ngIf="data != null">
+        <ion-col size="12" no-padding no-margin>
+          <ion-list no->
+            <ul collapsible no-padding no-margin>
+              <li *ngFor="let group of data.items;">
+                <!-- Expandable Full image with CTA Header-->
+                <div class="collapsible-header" background-size [ngStyle]="{'background-image': 'url(' + group.backgroundImage + ')'}">
+                  <ion-button button-icon text-capitalize (click)="toggleGroup(group)">
+                    <ion-icon icon-font-md icon-color-accent slot="start" [name]="group.icon">
+                    </ion-icon>
+                    {{group.iconText}}
+                  </ion-button>
+                </div>
+                <!-- Expandable Full image with CTA Body -->
+                <div class="item-accordion" [ngClass]="{'active': group.show }" [hidden]="!group.show">
+                  <div text-center>
+                    <ion-item lines="none" transparent text-center no-padding>
+                      <ion-label>
+                        <h1 text-size-xl font-bold text-color-primary text-wrap (click)="onItemClickFunc(group, $event)">{{group.items.title}}</h1>
+                        <div clearfix></div>
+                        <div rating padding-top>
+                          <!-- Icon Rating Star -->
+                          <div float-start text-center *ngFor="let item of group.items.iconsStars;let i = index" (click)="onStarClass(group.items.iconsStars, i, $event);">
+                            <i icon-font-sm icon-color-accent *ngIf="item.isActive" class="icon {{item.iconActive}}"></i>
+                            <i icon-font-sm icon-color-accent *ngIf="!item.isActive" class="icon {{item.iconInactive}}"></i>
+                          </div>
+                        </div>
+                        <div clearfix></div>
+                        <!-- Reviews Star -->
+                        <p text-size-sm font-regular text-color-secondary no-margin>{{group.items.reviews}}</p>
+                        <div clearfix></div>
+                        <p text-size-md text-color-secondary font-regular text-wrap padding-start>{{group.items.description}}</p>
+                      </ion-label>
+                    </ion-item>
+                    <!-- Subtitle Subtitle -->
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </ion-list>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-content>
+</ion-app>

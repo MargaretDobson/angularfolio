@@ -1,0 +1,61 @@
+<!-- EXPANDABLE --COMPONENT 1 -->
+<ion-app>
+  <!-- Header -->
+  <ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-back-button defaultHref="/"></ion-back-button>
+      </ion-buttons>
+      <ion-title text-capitalize>{{data.toolbarTitle}}</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content *ngIf="data != null">
+    <ion-grid no-padding>
+      <ion-row *ngIf="data != null">
+        <ion-col size="12" no-padding>
+          <ion-list no-margin>
+            <!-- Header List Big Image -->
+            <ion-list-header>
+              <ion-label padding-top padding-bottom>
+                <h1 text-size-md font-regular text-color-accent no-margin>{{data.header}}</h1>
+              </ion-label>
+            </ion-list-header>
+            <ul collapsible no-margin no-padding>
+              <li *ngFor="let group of data.items;">
+                <!-- List big image Header -->
+                <div collapsible-header no-padding (click)="toggleGroup(group)">
+                  <ion-item default-item lines="none">
+                    <ion-avatar slot="start">
+                      <ion-img [src]="group.image" [alt]="group.title"></ion-img>
+                    </ion-avatar>
+                    <ion-label padding-start>
+                      <h2 text-size-md font-bold text-color-primary text-wrap>{{group.title}}</h2>
+                      <h3 text-size-sm text-color-secondary font-regular text-wrap>{{group.description}}</h3>
+                    </ion-label>
+                  </ion-item>
+                </div><!-- End List big image Header -->
+                <!-- LIST OPEN ACCORDIAN BODY  -->
+                <div item-accordion [ngClass]="{'active': group.show }" [hidden]="!group.show">
+                  <ion-item default-item lines="none" *ngFor="let item of group.expandItems;" (click)="onItemClickFunc(item, $event)">
+                    <!-- Avatar -->
+                    <ion-avatar slot="end">
+                      <img [src]="item.image" [alt]="item.title" />
+                    </ion-avatar>
+                    <ion-label>
+                      <!-- Subtitle Title -->
+                      <h2 text-size-md font-bold text-color-primary text-nowrap>{{item.title}}</h2>
+                      <!-- Subtitle Subtitle -->
+                      <h3 text-size-sm text-color-secondary font-regular text-wrap>{{item.description}}</h3>
+                      <p text-size-sm font-light text-color-secondary text-nowrap>{{item.details}}</p>
+                    </ion-label>
+                  </ion-item>
+                </div>
+                <!-- End List big image Body -->
+              </li>
+            </ul>
+          </ion-list>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-content>
+</ion-app>

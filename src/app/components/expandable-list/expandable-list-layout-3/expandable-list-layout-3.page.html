@@ -1,0 +1,53 @@
+<!-- EXPANDABLE --COMPONENT 3 -->
+<ion-app>
+  <!-- Header -->
+  <ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-back-button defaultHref="/"></ion-back-button>
+      </ion-buttons>
+      <ion-title text-capitalize>{{data.toolbarTitle}}</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content *ngIf="data != null">
+    <ion-grid no-padding>
+      <ion-row *ngIf="data != null">
+        <ion-col size="12" no-padding no-margin>
+          <ion-list>
+            <ion-list-header padding-top padding-bottom>
+              <h1 text-size-md font-regular text-color-accent no-margin>{{data.header}}</h1>
+            </ion-list-header>
+            <ul no-margin no-padding class="collapsible">
+              <li *ngFor="let group of data.items">
+                <!-- Expandable Full image with CTA Header-->
+                <div collapsible-header (click)="toggleGroup(group)">
+                  <ion-item lines="none" default-item>
+                    <ion-label>
+                      <!-- Title -->
+                      <h2 text-size-md font-bold text-color-primary>{{group.title}}</h2>
+                    </ion-label>
+                    <!-- Icon -->
+                    <i icon-color-accent icon-font-md slot="end" class="icon {{group.icon}}"></i>
+                  </ion-item>
+                </div>
+                <!-- Expandable Full image with CTA Body -->
+                <div item-accordion [ngClass]="{'active': group.show }" [hidden]="!group.show">
+                  <ion-item default-item lines="none" *ngFor="let item of group.items;" (tap)="onEvent('onCheckBoxClick', item, $event);">
+                    <ion-checkbox [checked]="item.isChecked"></ion-checkbox>
+                    <ion-label padding-start text-size-md font-bold text-color-primary>{{item.title}}</ion-label>
+                  </ion-item>
+                </div>
+              </li>
+            </ul>
+          </ion-list>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-content>
+  <ion-footer no-padding->
+    <ion-toolbar no-padding transparent>
+      <!-- Footer Button -->
+      <ion-button default-button box-shadow margin-start margin-end text-capitalize expand="block" *ngIf="data != null">{{data.button}}</ion-button>
+    </ion-toolbar>
+  </ion-footer>
+</ion-app>

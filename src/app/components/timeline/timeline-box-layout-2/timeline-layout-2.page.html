@@ -1,0 +1,19 @@
+<!--Themes Time Line - Timeline With Avatar -->
+<ion-grid no-padding *ngIf="data != null">
+  <ion-row padding-start padding-top>
+    <ion-col no-padding size="11" offset="1">
+      <div item-thumbnail margin-bottom *ngFor="let item of data.items" (click)="onItemClickFunc(item, $event)">
+        <span text-size-sm text-color-accent font-bold text-wrap>{{item.time}}</span>
+        <ion-item default-item lines="none">
+          <ion-avatar slot="start">
+            <img [src]="item.avatar">
+          </ion-avatar>
+          <ion-label padding-start overflow-visible>
+            <h2 text-size-md text-color-primary font-bold text-wrap>{{item.title}}</h2>
+            <ion-badge margin-top box-shadow>{{item.price}}</ion-badge>
+          </ion-label>
+        </ion-item>
+      </div>
+    </ion-col>
+  </ion-row>
+</ion-grid>

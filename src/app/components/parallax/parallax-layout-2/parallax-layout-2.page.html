@@ -1,0 +1,112 @@
+<ion-header [ngClass]="{'active': isHeaderVisible }">
+  <ion-toolbar transparent>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title text-capitalize>{{data.toolbarTitle}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<!--- Theme Parallax Product -->
+<ion-page class="ion-page">
+  <!--- Header Big Image -->
+  <ion-content scrollEvents="true" parallax-header *ngIf="data != null" (ionScroll)="scrolling($event)">
+    <div class="header-image" background-secondary>
+      <div padding background-size [ngStyle]="{'background-image': 'url(' + data.headerImage + ')'}">
+      </div>
+      <div info-block text-center padding>
+        <!-- Avatar-->
+        <ion-avatar>
+          <img [src]="data.avatar">
+        </ion-avatar>
+        <!--- Parallax Subtitle -->
+        <h1 text-size-md text-color-primary font-bold *ngIf="data != null">{{data.title}}</h1>
+        <!--- Parallax Title -->
+        <h2 text-size-sm text-color-secondary font-regular no-margin *ngIf="data != null">{{data.subtitle}}</h2>
+        <div segment-block padding-top *ngIf="data != null">
+          <ion-segment [(ngModel)]="selectedItem">
+            <ion-segment-button text-capitalize value="Page1">
+              <ion-label text-center no-margin>
+                <span text-size-sm text-color-primary font-regular>{{data.events}}</span>
+                <div clearfix></div>
+                <span text-size-sm text-color-accent font-regular>{{data.buttonEvents}}</span>
+              </ion-label>
+            </ion-segment-button>
+            <ion-segment-button text-capitalize value="Page2">
+              <ion-label text-center no-margin>
+                <span text-size-sm text-color-primary font-regular>{{data.followers}}</span>
+                <div clearfix></div>
+                <span text-size-sm text-color-accent font-regular>{{data.buttonFollowers}}</span>
+              </ion-label>
+            </ion-segment-button>
+            <ion-segment-button text-capitalize value="Page3">
+              <ion-label text-center no-margin>
+                <span text-size-sm text-color-primary font-regular>{{data.following}}</span>
+                <div clearfix></div>
+                <span text-size-sm text-color-accent font-regular>{{data.buttonFollowing}}</span>
+              </ion-label>
+            </ion-segment-button>
+          </ion-segment>
+        </div>
+      </div>
+    </div>
+
+    <ion-grid no-padding *ngIf="isEnabled('Page1')">
+      <ion-row page1>
+        <ion-col background-secondary size="12" size-md="6" *ngFor="let item of data.page1.items">
+          <ion-card box-shadow no-margin text-center border-radius (click)="onItemClickFunc(item, $event)" background-size [ngStyle]="{'background-image': 'url(' + item.image + ')'}">
+            <ion-card-content text-center>
+              <h2 text-size-xl text-color-light font-bold text-wrap>{{item.title}}</h2>
+              <h3 text-size-md text-color-light font-regular text-wrap>{{item.subtitle}}</h3>
+            </ion-card-content>
+            <span new-category border-radius-left slot="end">{{item.button}}</span>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <ion-grid no-padding *ngIf="isEnabled('Page2')">
+      <ion-row page1>
+        <ion-col background-secondary no-padding size="12">
+          <ion-list no-margin>
+            <ion-item default-item lines="none" *ngFor="let item of data.page2.items">
+              <!-- Images -->
+              <ion-avatar>
+                <ion-img [src]="item.image"></ion-img>
+              </ion-avatar>
+              <ion-label padding-start overflow-visible>
+                <h2 text-size-md font-bold text-color-primary text-wrap>{{item.title}}</h2>
+              </ion-label>
+              <ion-button slot="end" default-button box-shadow text-capitalize>
+                {{item.ionButton}}
+              </ion-button>
+            </ion-item>
+          </ion-list>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+
+    <ion-grid no-padding *ngIf="isEnabled('Page3')">
+      <ion-row page2>
+        <ion-col background-secondary no-padding size="12">
+          <ion-list no-margin>
+            <ion-item default-item lines="none" *ngFor="let item of data.page3.items">
+              <!-- Images -->
+              <ion-avatar>
+                <ion-img [src]="item.image"></ion-img>
+              </ion-avatar>
+              <ion-label padding-start overflow-visible>
+                <h2 text-size-md font-bold text-color-primary text-wrap>{{item.title}}</h2>
+              </ion-label>
+              <ion-button slot="end" default-button box-shadow text-capitalize>
+                {{item.ionButton}}
+              </ion-button>
+            </ion-item>
+          </ion-list>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+  </ion-content>
+</ion-page>

@@ -1,0 +1,18 @@
+/* Style component 1
+========================================================*/
+ion-list-header {
+  display: block;
+}
+
+[default-item] {
+  margin: 8px 8px 0 8px !important;
+  --inner-padding-end: 0;
+}
+
+[icon-information] {
+  background: var(--cs-background-accent, #2ABDCE);
+  padding: 0 10px;
+  height: 100%;
+  display: grid;
+  align-items: center;
+}
