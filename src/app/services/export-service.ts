@@ -61,7 +61,6 @@ export class ExportService{
         let service = new ParallaxService(null, null);
         return {
             'layout2': service.getDataForLayout2(),
-            'layout3': service.getDataForLayout3(),
             'layout4': service.getDataForLayout4(),
         }
     }

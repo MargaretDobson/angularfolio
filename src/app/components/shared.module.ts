@@ -29,10 +29,6 @@ import { ExpandableListLayout1Page } from './expandable-list/expandable-list-lay
 import { ExpandableListLayout2Page } from './expandable-list/expandable-list-layout-2/expandable-list-layout-2.page';
 import { ExpandableListLayout3Page } from './expandable-list/expandable-list-layout-3/expandable-list-layout-3.page';
 
-import { DragAndDropListLayout1Page } from './drag-and-drop-list/drag-and-drop-list-layout-1/drag-and-drop-list-layout-1.page';
-import { DragAndDropListLayout2Page } from './drag-and-drop-list/drag-and-drop-list-layout-2/drag-and-drop-list-layout-2.page';
-import { DragAndDropListLayout3Page } from './drag-and-drop-list/drag-and-drop-list-layout-3/drag-and-drop-list-layout-3.page';
-
 import { GoogleCardListLayout1Page } from './google-card-list/google-card-list-layout-1/google-card-list-layout-1.page';
 import { GoogleCardListLayout2Page } from './google-card-list/google-card-list-layout-2/google-card-list-layout-2.page';
 import { GoogleCardListLayout3Page } from './google-card-list/google-card-list-layout-3/google-card-list-layout-3.page';
@@ -63,7 +59,6 @@ import { FullImageGalleryLayout1Page } from './full-image-gallery/full-image-gal
     SelectLayout4Page, SelectLayout5Page, SelectLayout6Page,
     ActionSheetLayout1Page, ActionSheetLayout2Page, ActionSheetLayout3Page,
     ExpandableListLayout1Page, ExpandableListLayout2Page, ExpandableListLayout3Page,
-    DragAndDropListLayout1Page, DragAndDropListLayout2Page, DragAndDropListLayout3Page,
     GoogleCardListLayout1Page, GoogleCardListLayout2Page, GoogleCardListLayout3Page, GoogleCardListLayout4Page,
     SwipeToDismissListLayout1Page, SwipeToDismissListLayout2Page, SwipeToDismissListLayout3Page,
     ImageGalleryLayout1Page, ImageGalleryLayout2Page, ImageGalleryLayout3Page,
@@ -76,7 +71,6 @@ import { FullImageGalleryLayout1Page } from './full-image-gallery/full-image-gal
     SelectLayout4Page, SelectLayout5Page, SelectLayout6Page,
     ActionSheetLayout1Page, ActionSheetLayout2Page, ActionSheetLayout3Page,
     ExpandableListLayout1Page, ExpandableListLayout2Page, ExpandableListLayout3Page,
-    DragAndDropListLayout1Page, DragAndDropListLayout2Page, DragAndDropListLayout3Page,
     GoogleCardListLayout1Page, GoogleCardListLayout2Page, GoogleCardListLayout3Page, GoogleCardListLayout4Page,
     SwipeToDismissListLayout1Page, SwipeToDismissListLayout2Page, SwipeToDismissListLayout3Page,
     ImageGalleryLayout1Page, ImageGalleryLayout2Page, ImageGalleryLayout3Page,
