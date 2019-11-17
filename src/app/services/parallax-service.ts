@@ -14,8 +14,7 @@ export class ParallaxService implements IService {
 
   getAllThemes = (): Array<any> => {
     return [
-      { 'url': 'parallax/0', 'title': 'News List', 'theme': 'layout1' },
-      { 'url': 'parallax/1', 'title': 'Prifile', 'theme': 'layout2' },
+      { 'url': 'parallax/1', 'title': 'Profile', 'theme': 'layout2' },
       { 'url': 'parallax/2', 'title': 'Parallax Event', 'theme': 'layout3' },
       { 'url': 'parallax/3', 'title': 'News', 'theme': 'layout4' }
     ];
@@ -37,102 +36,7 @@ export class ParallaxService implements IService {
       "title": "Engage real-time",
       "subtitle": "Startup Pitches",
       "items": [
-        {
-          "id": 1,
-          "title": "Stacey Simpson",
-          "subtitle": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.",
-          "image": "assets/imgs/avatar/24.jpg",
-          "imageAlt": "avatar",
-          "button": "Read"
-        },
-        {
-          "id": 2,
-          "title": "Samantha Reynolds",
-          "subtitle": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.",
-          "image": "assets/imgs/avatar/10.jpg",
-          "imageAlt": "avatar",
-          "button": "Read"
-        },
-        {
-          "id": 3,
-          "title": "Stacey Harris",
-          "subtitle": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.",
-          "image": "assets/imgs/avatar/11.jpg",
-          "imageAlt": "avatar",
-          "button": "Read"
-        },
-        {
-          "id": 4,
-          "title": "Jacqueline Guyon",
-          "subtitle": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.",
-          "image": "assets/imgs/avatar/12.jpg",
-          "imageAlt": "avatar",
-          "button": "Read"
-        },
-        {
-          "id": 5,
-          "title": "Mia Langevoort",
-          "subtitle": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.",
-          "image": "assets/imgs/avatar/13.jpg",
-          "imageAlt": "avatar",
-          "button": "Read"
-        },
-        {
-          "id": 6,
-          "title": "Amy Simsek",
-          "subtitle": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.",
-          "image": "assets/imgs/avatar/14.jpg",
-          "imageAlt": "avatar",
-          "button": "Read"
-        },
-        {
-          "id": 7,
-          "title": "Charlotte Sital",
-          "subtitle": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.",
-          "image": "assets/imgs/avatar/15.jpg",
-          "imageAlt": "avatar",
-          "button": "Read"
-        },
-        {
-          "id": 8,
-          "title": "Iria Padrón",
-          "subtitle": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.",
-          "image": "assets/imgs/avatar/16.jpg",
-          "imageAlt": "avatar",
-          "button": "Read"
-        },
-        {
-          "id": 9,
-          "title": "Laura Sarabia",
-          "subtitle": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.",
-          "image": "assets/imgs/avatar/17.jpg",
-          "imageAlt": "avatar",
-          "button": "Read"
-        },
-        {
-          "id": 10,
-          "title": "Alexia Bañuelos",
-          "subtitle": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.",
-          "image": "assets/imgs/avatar/18.jpg",
-          "imageAlt": "avatar",
-          "button": "Read"
-        },
-        {
-          "id": 11,
-          "title": "Erika Quiroz",
-          "subtitle": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.",
-          "image": "assets/imgs/avatar/19.jpg",
-          "imageAlt": "avatar",
-          "button": "Read"
-        },
-        {
-          "id": 12,
-          "title": "Emma Banda",
-          "subtitle": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.",
-          "image": "assets/imgs/avatar/20.jpg",
-          "imageAlt": "Presque Isle Harbor",
-          "button": "Read"
-        }
+        
       ]
     };
   }

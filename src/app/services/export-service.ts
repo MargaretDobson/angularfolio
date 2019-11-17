@@ -86,8 +86,6 @@ export class ExportService{
     getProfile() {
         let service = new ProfileService(null, null, null);
         return {
-            'layout1': service.getDataForLayout1(),
-            'layout2': service.getDataForLayout2(),
             'layout3': service.getDataForLayout3(),
             'layout4': service.getDataForLayout4(),
             'layout5': service.getDataForLayout5(),

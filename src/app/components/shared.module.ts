@@ -1,22 +1,14 @@
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 
 import { ParallaxHeader } from './parallax/parallax-header';
 import { AgmCoreModule } from '@agm/core';
 
-import { FormsLayout1Page } from './forms/forms-layout-1/forms-layout-1.page';
-import { FormsLayout2Page } from './forms/forms-layout-2/forms-layout-2.page';
-import { FormsLayout3Page } from './forms/forms-layout-3/forms-layout-3.page';
-import { FormsLayout4Page } from './forms/forms-layout-4/forms-layout-4.page';
-
 import { ParallaxLayout2Page } from './parallax/parallax-layout-2/parallax-layout-2.page';
 import { ParallaxLayout3Page } from './parallax/parallax-layout-3/parallax-layout-3.page';
 import { ParallaxLayout4Page } from './parallax/parallax-layout-4/parallax-layout-4.page';
 
-import { ProfileLayout1Page } from './profile/profile-layout-1/profile-layout-1.page';
-import { ProfileLayout2Page } from './profile/profile-layout-2/profile-layout-2.page';
 import { ProfileLayout3Page } from './profile/profile-layout-3/profile-layout-3.page';
 import { ProfileLayout4Page } from './profile/profile-layout-4/profile-layout-4.page';
 import { ProfileLayout5Page } from './profile/profile-layout-5/profile-layout-5.page';
@@ -60,15 +52,13 @@ import { FullImageGalleryLayout1Page } from './full-image-gallery/full-image-gal
 @NgModule({
   imports: [
     CommonModule,
-    FormsModule,
     IonicModule,
     AgmCoreModule.forRoot({ apiKey: '' })
   ],
   declarations: [
     ParallaxHeader,
-    FormsLayout1Page, FormsLayout2Page, FormsLayout3Page, FormsLayout4Page,
     ParallaxLayout2Page, ParallaxLayout3Page, ParallaxLayout4Page,
-    ProfileLayout1Page, ProfileLayout2Page, ProfileLayout3Page, ProfileLayout4Page, ProfileLayout5Page,
+    ProfileLayout3Page, ProfileLayout4Page, ProfileLayout5Page,
     SelectLayout1Page, SelectLayout2Page, SelectLayout3Page,
     SelectLayout4Page, SelectLayout5Page, SelectLayout6Page,
     ActionSheetLayout1Page, ActionSheetLayout2Page, ActionSheetLayout3Page,
@@ -80,9 +70,8 @@ import { FullImageGalleryLayout1Page } from './full-image-gallery/full-image-gal
     FullImageGalleryLayout1Page
   ],
   exports: [ ParallaxHeader,
-    FormsLayout1Page, FormsLayout2Page, FormsLayout3Page, FormsLayout4Page,
     ParallaxLayout2Page, ParallaxLayout3Page, ParallaxLayout4Page,
-    ProfileLayout1Page, ProfileLayout2Page, ProfileLayout3Page, ProfileLayout4Page, ProfileLayout5Page,
+    ProfileLayout3Page, ProfileLayout4Page, ProfileLayout5Page,
     SelectLayout1Page, SelectLayout2Page, SelectLayout3Page,
     SelectLayout4Page, SelectLayout5Page, SelectLayout6Page,
     ActionSheetLayout1Page, ActionSheetLayout2Page, ActionSheetLayout3Page,
